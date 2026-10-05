@@ -6,6 +6,12 @@ as a native Windows executable. The goal is **native 60 FPS** and modern PC feat
 
 > **Work in progress.** Nothing is released yet. This page tracks progress.
 
+> [!IMPORTANT]
+> **You must own the game to play this.** This project will never include or distribute the game's
+> code, data or executables. To use it, you'll need your own legally purchased Xbox 360 copy of
+> WWE SmackDown vs. Raw 2008, dumped from your own disc. **This project does not condone piracy.**
+> Requests for game files, ISOs or download links will be closed without reply.
+
 ![Title screen running natively on Windows](media/title-screen.png)
 
 *Captured from the recompiled build running natively on Windows (Direct3D 12).*
@@ -38,7 +44,11 @@ As of October 5, 2026:
 ## FAQ
 
 **Can I download it?** Not yet. When there is a release, it will never include the game's code,
-data or executables. You'll need your own copy of the game.
+data or executables. You'll need your own legally purchased copy of the game, dumped from your own
+disc.
+
+**Can you share the game files or an ISO?** No. This project does not condone piracy and will never
+host, share or link to game files. Issues or messages asking for them will be closed.
 
 **Is this an emulator?** No. The game's code is translated to C++ before it runs, the same approach as
 Unleashed Recompiled. Some Xbox 360 hardware behaviour (GPU, audio) is still reproduced by the runtime.
@@ -54,4 +64,6 @@ Unleashed Recompiled. Some Xbox 360 hardware behaviour (GPU, audio) is still rep
 ## Legal
 
 This is an unofficial fan project, not affiliated with or endorsed by WWE, THQ, Yuke's, 2K or Microsoft.
-All trademarks belong to their owners. This repository contains no game code, assets or executables.
+All trademarks belong to their owners. This repository contains no game code, assets or executables,
+and it never will. Playing requires a legitimately owned copy of the original game. Piracy is not
+supported or condoned.
