@@ -23,6 +23,7 @@ as a native Windows executable. The goal is **native 60 FPS** and modern PC feat
   Unleashed Recompiled): about 29,000 functions, compiled with Clang.
 - The parts of the Xbox 360 outside the game itself (kernel, GPU, XMA audio, file system) are handled by
   ReXGlue's runtime, which builds on the [Xenia](https://github.com/xenia-project/xenia) project's research.
+  On Windows, the game's graphics are rendered through Vulkan (Direct3D 12 is also built in).
 - Because the game code is ordinary C++ at build time, fixes and enhancements (like the frame-rate
   unlock) can be made directly in the code instead of through emulator patches.
 
@@ -32,9 +33,11 @@ As of October 5, 2026:
 
 - [x] Recompiles cleanly (0 analysis errors)
 - [x] Boots, plays intro movies, reaches the title screen and menus
-- [x] Matches playable at original speed on Windows (Direct3D 12)
+- [x] Matches playable at original speed on Windows, with no crashes, using the Vulkan renderer
 - [x] Controllers: DualSense, Xbox and other SDL-supported pads, plus keyboard
-- [x] Fixed a GPU crash a couple of minutes into matches (still being confirmed in longer sessions)
+- [x] Worked around a GPU crash 1–2 minutes into matches by switching from Direct3D 12 to Vulkan
+      (the Direct3D 12 bug itself is still being investigated)
+- [x] Windowed mode, plus a launcher with a live log window for crash reports
 - [ ] **Native 60 FPS**: unlock the frame limiter and keep game logic at correct speed
 - [ ] Full playthrough testing (career, season, create modes)
 - [ ] Higher internal resolution, widescreen and ultrawide polish
