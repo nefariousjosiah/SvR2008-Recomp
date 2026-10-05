@@ -18,16 +18,10 @@ as a native Windows executable. The goal is **native 60 FPS** and modern PC feat
 
 ## Showcase
 
-Triple H vs. Randy Orton, recorded from the recompiled build running natively on Windows
-(Vulkan renderer, rendered at 2560 × 1440).
+![Triple H hits the Pedigree on Randy Orton](media/showcase/pedigree.gif)
 
-![Highlight reel: tie-up, lift and slam, Pedigree, top-rope dive and the three count](media/showcase/highlights.gif)
-
-| | |
-|:---:|:---:|
-| ![Tie-up](media/showcase/1-tie-up.gif)<br>**Tie-up** | ![Lift and slam](media/showcase/2-lift-and-slam.gif)<br>**Lift & slam** |
-| ![Finisher: Pedigree](media/showcase/3-pedigree.gif)<br>**Finisher: Pedigree** | ![Top-rope dive](media/showcase/4-top-rope-dive.gif)<br>**Top-rope dive** |
-| ![Pinfall: 1, 2, 3](media/showcase/5-pinfall.gif)<br>**1, 2, 3** | |
+*Triple H's Pedigree on Randy Orton, recorded from the recompiled build running natively on Windows
+(Vulkan renderer, rendered at 2560 × 1440).*
 
 ## How it works
 
