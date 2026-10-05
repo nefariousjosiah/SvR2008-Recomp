@@ -2,9 +2,9 @@
 
 A native PC port of **WWE SmackDown vs. Raw 2008** (Xbox 360), built by statically recompiling the
 game's PowerPC code into C++ and compiling it for x86-64. It is not an emulator: the game logic runs
-as a native Windows executable. The goal is **native 60 FPS** and modern PC features.
+as a native Windows executable, now at **native 60 FPS** everywhere, with modern PC features on the way.
 
-> **Work in progress.** Nothing is released yet. This page tracks progress.
+> **Work in progress (version 0.1).** Nothing is released yet. This page tracks progress.
 
 > [!IMPORTANT]
 > **You must own the game to play this.** This project will never include or distribute the game's
@@ -45,10 +45,11 @@ As of October 5, 2026:
 - [x] Worked around a GPU crash 1–2 minutes into matches by switching from Direct3D 12 to Vulkan
       (the Direct3D 12 bug itself is still being investigated)
 - [x] Windowed mode, plus a launcher with a live log window for crash reports
-- [ ] **Native 60 FPS**: unlock the frame limiter and keep game logic at correct speed
-- [ ] Full playthrough testing (career, season, create modes)
+- [x] **Native 60 FPS** everywhere (menus, entrances, cutscenes and matches) at the correct game speed
+- [x] On-screen FPS counter (F2 to toggle)
 - [x] Higher internal resolution (1440p, 4K and above) with a startup resolution picker, plus 16x
       anisotropic filtering
+- [ ] Full playthrough testing (career, season, create modes)
 - [ ] Widescreen and ultrawide polish
 - [ ] macOS (Apple Silicon): builds and renders, display output still being fixed
 - [ ] Loose-file mod support, faster loading, clean removal of defunct Xbox Live features
@@ -70,7 +71,18 @@ As of October 5, 2026:
   logging) and ruled out several causes. I also fixed a shader-compilation race found along the way.
 - **Vulkan renderer:** matches now run without crashing on Vulkan. Windows uses it by default while
   the Direct3D 12 bug is investigated.
-- **Next:** finding the 30 FPS frame limiter for the native 60 FPS work.
+- **Sharper graphics:** the 3D can now render at 1440p, 4K or higher, picked from a startup window
+  (Auto matches your monitor), with 16x anisotropic filtering.
+- **Native 60 FPS:** two things were holding the game back.
+  - The runtime paused for 1–10 ms whenever the game asked the Xbox music player for its status, which
+    the game does every frame. That pause was meant for games that ask thousands of times a second, so
+    it now only applies to them. Menus went from about 46 FPS to a locked 60.
+  - The game switches itself into a 30 FPS mode for matches, entrances and cutscenes, and that mode
+    also sets how far each frame moves the action. Showing those frames at 60 made entrances run at
+    double speed, so the game is now kept in its own 60 FPS mode, where its timing is correct.
+  The whole game now runs at 60 FPS at normal speed, shown by a new on-screen FPS counter.
+- **Version 0.1.**
+- **Next:** HD textures, widescreen and ultrawide polish, and full playthrough testing.
 
 ## FAQ
 
