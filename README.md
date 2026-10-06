@@ -1,4 +1,4 @@
-# SvR 2008 Recompiled
+# WWE-SVR2008-RECOMP
 
 A native PC port of **WWE SmackDown vs. Raw 2008** (Xbox 360), built by statically recompiling the
 game's PowerPC code into C++ and compiling it for x86-64. It is not an emulator: the game logic runs
