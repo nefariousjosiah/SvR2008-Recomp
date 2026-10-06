@@ -20,9 +20,6 @@ as a native Windows executable, now at **native 60 FPS** everywhere, with modern
 
 ![Triple H hits the Pedigree on Randy Orton](media/showcase/pedigree.gif)
 
-*Triple H's Pedigree on Randy Orton, recorded from the recompiled build running natively on Windows
-(Vulkan renderer, rendered at 2560 × 1440).*
-
 ## How it works
 
 - The game executable (`default.xex`) is translated ahead of time into C++ with the
@@ -82,6 +79,12 @@ As of October 5, 2026:
     double speed, so the game is now kept in its own 60 FPS mode, where its timing is correct.
   The whole game now runs at 60 FPS at normal speed, shown by a new on-screen FPS counter.
 - **Version 0.1.**
+- **Heavy scenes:** entrance camera shots of the crowd draw each fan separately, up to about 5,000
+  draw calls in one frame. The renderer now skips rebuilding texture bindings when a draw uses the
+  same textures as the last one, and the graphics thread gets priority over other busy programs.
+  No changes tuned to one PC: the build runs on the same range of CPUs and GPUs as before.
+  Recording tip: use a recorder with hardware (GPU) encoding. Software (CPU) encoding competes with
+  the game for the CPU and caused dips in crowd shots at 1440p.
 - **Next:** HD textures, widescreen and ultrawide polish, and full playthrough testing.
 
 ## FAQ
