@@ -46,6 +46,9 @@ As of October 5, 2026:
 - [x] On-screen FPS counter (F2 to toggle)
 - [x] Higher internal resolution (1440p, 4K and above) with a startup resolution picker, plus 16x
       anisotropic filtering
+- [ ] **Native renderer** (in progress): the game's graphics drawn directly with Vulkan instead of
+      emulating the Xbox 360 GPU. Intro movies, menus, loading screens and matches already render;
+      some textures and transparency are still being fixed
 - [ ] Full playthrough testing (career, season, create modes)
 - [ ] Widescreen and ultrawide polish
 - [ ] macOS (Apple Silicon): builds and renders, display output still being fixed
@@ -87,6 +90,21 @@ As of October 5, 2026:
   the game for the CPU and caused dips in crowd shots at 1440p.
 - **Next:** HD textures, widescreen and ultrawide polish, and full playthrough testing.
 
+### October 6–7, 2026
+
+- **Native renderer, started:** the current build still emulates the Xbox 360 GPU: every frame, the
+  game's GPU command stream is translated for the PC as it runs. The new renderer skips that. The
+  game's own Direct3D calls are drawn directly with Vulkan, and all 449 of the game's shaders are
+  converted to PC shaders ahead of time. That means less work per frame and a cleaner path to macOS
+  (through MoltenVK). It builds on [re:Blue](https://github.com/zolaware/reblue)'s renderer for
+  Blue Dragon.
+- **First results:** the intro movies, title screen, menus, loading screens and matches now render
+  through it at 60 FPS, including wrestlers, the crowd, the ring, the HUD and the game's post-processing
+  (bloom and depth of field).
+- **Still to fix:** some textures, transparency on a few character parts, and full-game testing. Until
+  it matches the current renderer everywhere, it stays in a separate development build; the existing
+  renderer remains the one in use.
+
 ## FAQ
 
 **Can I download it?** Not yet. When there is a release, it will never include the game's code,
@@ -97,7 +115,8 @@ disc.
 host, share or link to game files. Issues or messages asking for them will be closed.
 
 **Is this an emulator?** No. The game's code is translated to C++ before it runs, the same approach as
-Unleashed Recompiled. Some Xbox 360 hardware behaviour (GPU, audio) is still reproduced by the runtime.
+Unleashed Recompiled. Some Xbox 360 hardware behaviour (GPU, audio) is still reproduced by the runtime;
+a native renderer that drops the GPU emulation is in progress.
 
 **Which version?** The Xbox 360 release, "WWE SmackDown vs. Raw 2008" (USA, Europe).
 
@@ -105,6 +124,9 @@ Unleashed Recompiled. Some Xbox 360 hardware behaviour (GPU, audio) is still rep
 
 - [ReXGlue SDK](https://github.com/rexglue/rexglue-sdk) for the recompiler and runtime
 - [Xenia](https://github.com/xenia-project/xenia) for years of Xbox 360 research the runtime builds on
+- [re:Blue](https://github.com/zolaware/reblue) and its versions of
+  [plume](https://github.com/zolaware/plume) and [XenosRecomp](https://github.com/zolaware/reblue-XenosRecomp),
+  which the native renderer builds on
 - Yuke's and THQ for the original game
 
 ## Legal
