@@ -4,8 +4,8 @@
 // access violation it passes on reaches this handler, which walks the host stack and writes each
 // frame as an offset into svr2008.exe to logs/crash_trace.txt. A watchdog thread writes every
 // thread's stack to logs/hang_trace.txt when no frame has been presented for 10 s (the renderer
-// calls SvrWatchdogHeartbeat per frame). tools/native/symbolize_crash.py names the frames from the
-// linker map (out/build/<preset>/svr2008.map).
+// calls SvrWatchdogHeartbeat per frame). The frames can be named from the linker map
+// (out/build/<preset>/svr2008.map).
 
 #if defined(_WIN32)
 

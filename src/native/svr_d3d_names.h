@@ -3,7 +3,7 @@
 // Force-included into the native renderer sources (cmake/native_renderer.cmake), so
 // REX_HOOK(D3DDevice_Clear, ...) overrides SvR's recompiled sub_8224E9D8 and
 // __imp__D3DDevice_Clear calls its original body. Every entry is confirmed by behaviour
-// (config/native/d3d_names.toml has the evidence). Functions not listed here are either not used
+// (the device fields it writes and the functions it calls). Functions not listed here are either not used
 // by SvR's engine or not identified yet; a hook that names one fails to compile on purpose.
 
 #pragma once
