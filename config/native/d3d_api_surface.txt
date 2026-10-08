@@ -1,0 +1,162 @@
+    82234E04 size    68 game-callers   3 census        0  
+    82234E80 size    12 game-callers  11 census       18  =rex__get_heap_handle
+    82234E90 size    32 game-callers   2 census  6677023  
+    82234F38 size     4 game-callers  38 census        2  =rex_j_RtlSetLastError
+    82234F40 size   140 game-callers   3 census      140  
+    82235500 size   116 game-callers   4 census       34  
+PM4 82235578 size   128 game-callers  17 census       52  
+    822355F8 size    80 game-callers   1 census        0  
+    82235648 size   200 game-callers   6 census        0  
+PM4 82235710 size    80 game-callers   8 census        0  
+    82235760 size    16 game-callers   7 census        0  
+    82235770 size   172 game-callers   6 census        0  ~Direct3D_CreateDevice
+PM4 82235820 size    72 game-callers   6 census        0  
+    82235868 size    12 game-callers   6 census        0  
+    82235878 size   152 game-callers   3 census      108  
+    82235910 size    20 game-callers   3 census       12  
+    82235928 size    24 game-callers   3 census       16  
+    822359B0 size   152 game-callers   3 census      276  
+    82235AD0 size   288 game-callers   4 census      128  
+    82235F60 size   344 game-callers   1 census        0  
+    82236680 size  1212 game-callers   1 census       44  
+    822372A8 size    16 game-callers   1 census        0  
+    822372B8 size   184 game-callers   3 census       16  
+PM4 82237370 size    24 game-callers   5 census       12  
+    82237388 size   184 game-callers   2 census        0  
+    82237440 size     4 game-callers   2 census        0  
+    82237448 size   172 game-callers   2 census        0  
+    822374F8 size     4 game-callers   2 census        0  
+    82237500 size   288 game-callers  13 census       36  OK D3DDevice_CreateTexture
+    82237620 size   296 game-callers   8 census        3  OK D3DDevice_CreateSurface
+    82237748 size   152 game-callers   3 census       32  =D3DSurface_GetDesc
+PM4 822377E0 size    32 game-callers   2 census       16  
+    82237800 size    68 game-callers   2 census        0  
+PM4 82237848 size    28 game-callers   1 census        0  
+    82237868 size   376 game-callers   9 census     8785  OK D3DDevice_SetTexture
+PM4 82238910 size    28 game-callers   1 census      587  OK D3DResource_BlockUntilNotBusy
+PM4 82239000 size    84 game-callers   1 census        0  
+    82239DA8 size    20 game-callers   3 census       49  
+PM4 82239F40 size    84 game-callers   6 census        0  
+    82239F98 size    64 game-callers   4 census     1701  
+    82239FD8 size    16 game-callers   4 census     1701  
+PM4 8223A0F8 size   180 game-callers   1 census        1  
+PM4 8223AEF8 size   304 game-callers   2 census     1692  OK D3DDevice_Present
+    8223DA20 size    28 game-callers   1 census     6729  =D3DDevice_SetRenderState_CullMode
+    8223DA80 size    36 game-callers   1 census        2  ~D3DDevice_SetRenderState_AlphaTestEnable
+    8223DAB8 size   128 game-callers   1 census        2  =D3DDevice_SetRenderState_AlphaBlendEnable
+    8223DBD8 size   124 game-callers   1 census        2  =D3DDevice_SetRenderState_SrcBlend
+    8223DC68 size   124 game-callers   1 census        2  =D3DDevice_SetRenderState_DestBlend
+    8223DEE0 size    52 game-callers   1 census        2  =D3DDevice_SetRenderState_AlphaRef
+    8223DF48 size    28 game-callers   1 census        2  =D3DDevice_SetRenderState_AlphaFunc
+    8223E170 size    56 game-callers   2 census     2764  
+    8223E1B0 size    28 game-callers   1 census     2764  =D3DDevice_SetRenderState_ZWriteEnable
+    8223E1E0 size    36 game-callers   1 census        2  ~D3DDevice_SetRenderState_ZFunc
+    8223E218 size    56 game-callers   1 census        2  ~D3DDevice_SetRenderState_StencilEnable
+    8223E258 size    36 game-callers   1 census        2  ~D3DDevice_SetRenderState_TwoSidedStencilMode
+    8223E290 size    28 game-callers   1 census        2  =D3DDevice_SetRenderState_StencilFunc
+    8223E2C0 size    36 game-callers   1 census        2  ~D3DDevice_SetRenderState_StencilFail
+    8223E2F8 size    36 game-callers   1 census        2  ~D3DDevice_SetRenderState_StencilZFail
+    8223E330 size    28 game-callers   1 census        2  =D3DDevice_SetRenderState_StencilPass
+    8223E360 size    28 game-callers   1 census        2  =D3DDevice_SetRenderState_CCWStencilFunc
+    8223E390 size    36 game-callers   1 census        2  ~D3DDevice_SetRenderState_CCWStencilFail
+    8223E3C8 size    36 game-callers   1 census        2  ~D3DDevice_SetRenderState_CCWStencilZFail
+    8223E400 size    28 game-callers   1 census        2  =D3DDevice_SetRenderState_CCWStencilPass
+    8223E430 size    20 game-callers   1 census        2  =D3DDevice_SetRenderState_StencilRef
+    8223E450 size    20 game-callers   1 census        2  =D3DDevice_SetRenderState_StencilMask
+    8223E470 size    20 game-callers   1 census        2  =D3DDevice_SetRenderState_StencilWriteMask
+    8223E708 size    56 game-callers   1 census        2  ~D3DDevice_SetRenderState_ColorWriteEnable
+    8223EC88 size    64 game-callers   3 census        2  =D3DDevice_SetRenderState_ViewportEnable
+    8223F078 size    28 game-callers   1 census        2  =D3DDevice_SetRenderState_PrimitiveResetEnable
+    8223F0A8 size    28 game-callers   1 census        2  ~D3DDevice_SetRenderState_PrimitiveResetIndex
+    8223F338 size     8 game-callers   1 census        2  
+    8223F368 size   192 game-callers   2 census       52  =D3DDevice_SetSamplerState_MinFilter
+    8223F4F8 size   192 game-callers   2 census       52  =D3DDevice_SetSamplerState_MagFilter
+PM4 8223FD58 size   252 game-callers   1 census     6771  OK D3DDevice_SetScissorRect
+    8223FE58 size    80 game-callers   1 census        0  
+    8223FEA8 size   284 game-callers   8 census       10  OK D3DDevice_SetStreamSource
+    8223FFC8 size   132 game-callers   1 census        0  
+    82240050 size   144 game-callers   6 census        2  OK D3DDevice_SetIndices
+    822400E0 size    68 game-callers   1 census        0  
+    82240128 size    60 game-callers   2 census        1  
+    82240168 size    60 game-callers   1 census        1  
+    822401A8 size   196 game-callers   1 census        1  
+PM4 82240698 size    16 game-callers   1 census        2  
+PM4 822406A8 size   124 game-callers   1 census     3385  
+PM4 82240B48 size   728 game-callers   3 census     1693  OK D3DDevice_SetDepthStencilSurface
+PM4 82240E20 size     4 game-callers   3 census     1692  
+    822423B8 size   232 game-callers   1 census     6730  
+    822424A0 size   232 game-callers   1 census        0  
+    82242588 size    92 game-callers   2 census        0  ~D3DDevice_SetVertexShaderConstantB
+    822425E8 size    92 game-callers   2 census        0  ~D3DDevice_SetPixelShaderConstantB
+    82242648 size    84 game-callers   1 census        0  ~D3DDevice_SetVertexShaderConstantI
+    822426A0 size    84 game-callers   1 census        0  ~D3DDevice_SetPixelShaderConstantI
+    822426F8 size   444 game-callers   6 census     3365  OK D3DDevice_SetPixelShader
+    822428B8 size    72 game-callers   1 census        0  ~XGGetMicrocodeShaderParts
+    822429F8 size   460 game-callers   5 census     3365  OK D3DDevice_SetVertexShader
+    82242BC8 size    72 game-callers   1 census        0  
+    82242C10 size    20 game-callers   5 census     3365  OK D3DDevice_SetVertexDeclaration
+    82242D18 size   132 game-callers   2 census       24  OK D3DDevice_CreateVertexDeclaration
+PM4 82242DA0 size   232 game-callers   2 census     1693  ~D3DDevice_CreateVertexDeclaration
+    82242E88 size    72 game-callers   1 census     1772  
+    82242ED0 size   272 game-callers   2 census        0  OK D3DDevice_CreatePixelShader
+    82242FE0 size   240 game-callers   2 census        0  OK D3DDevice_CreateVertexShader
+    82248CB0 size   164 game-callers   1 census        0  
+PM4 82249340 size  3652 game-callers   1 census     1693  OK D3DDevice_Resolve
+    8224A188 size    20 game-callers   1 census       16  
+    8224A1A0 size    36 game-callers   1 census        0  
+PM4 8224E9D8 size   188 game-callers   4 census     1693  OK D3DDevice_Clear
+    8224F8E8 size   112 game-callers   3 census        0  
+    8224F958 size   108 game-callers   3 census        0  
+    8224F9C8 size   104 game-callers   3 census        0  
+    8224FA30 size   108 game-callers   3 census        0  
+    8224FAA0 size   604 game-callers   2 census        0  ~D3DDevice_BeginZPass
+    8224FD78 size   116 game-callers  40 census        0  
+    8224FDF0 size   136 game-callers   1 census        0  
+    822506B8 size    44 game-callers  17 census        0  
+    82250740 size    52 game-callers   1 census        0  
+    82250778 size    16 game-callers   1 census        0  
+    82250788 size   100 game-callers   2 census        0  
+    822507F0 size    12 game-callers   2 census        0  =rex_GetCurrentThreadId
+    82250850 size   108 game-callers   3 census        0  
+    822508D0 size    92 game-callers   1 census        0  
+    82250940 size    88 game-callers   3 census        0  
+    82250998 size   204 game-callers   3 census        0  
+    82250A68 size    88 game-callers   1 census        0  
+    82250AC0 size   108 game-callers   4 census        0  
+    82250B30 size   108 game-callers   6 census        0  
+    822513A8 size   568 game-callers   6 census        0  
+    822515F8 size   240 game-callers   4 census        0  
+    822516E8 size   272 game-callers   2 census        0  ~rex_WriteFile
+    82251890 size   128 game-callers   5 census        0  
+    82251910 size   140 game-callers   6 census        0  
+    822519A0 size   136 game-callers   2 census        0  
+    82251F10 size   136 game-callers  28 census        0  
+    82251F98 size    84 game-callers   1 census        0  
+    82251FF0 size   112 game-callers   3 census        0  
+    82254A30 size    84 game-callers   2 census        0  
+    822554C8 size   628 game-callers   1 census        0  
+    82255948 size   432 game-callers   3 census        0  
+    82255EE0 size    20 game-callers   3 census        0  
+    82255EF8 size   160 game-callers 175 census        0  
+    82257938 size   216 game-callers   1 census        0  
+    82257A60 size   144 game-callers   4 census        0  ~rex_CachePartitionTerminateHandler
+    82257AF0 size   124 game-callers   2 census        0  
+    82257BD8 size   276 game-callers   1 census        0  
+    82257DA0 size   344 game-callers   1 census        0  
+    82257EF8 size   332 game-callers   2 census        0  
+    825AA0E0 size   508 game-callers   1 census        0  
+    825AA2E0 size   128 game-callers   1 census        1  
+    825AA360 size   108 game-callers   2 census       40  
+    825AA4D0 size  1020 game-callers   1 census        1  
+    825AA8D0 size   184 game-callers   2 census        0  
+    825AA9F0 size    12 game-callers   1 census        0  
+    825AAA00 size   600 game-callers   1 census        0  
+    825AAC58 size   560 game-callers   1 census        1  
+PM4 825AAF28 size  1184 game-callers   2 census     3365  OK D3DDevice_BeginVertices
+    825AB3C8 size    24 game-callers   2 census     3365  OK D3DDevice_EndVertices
+PM4 825AB3E8 size  1000 game-callers   1 census        0  OK D3DDevice_DrawVertices
+PM4 825AB7D0 size  1112 game-callers   1 census        0  OK D3DDevice_DrawIndexedVertices
+    825ABC28 size    72 game-callers   3 census       32  
+    825ABC70 size    44 game-callers   1 census       16  
+    825ABCA0 size    92 game-callers   2 census       16  
+    825ABD00 size  1676 game-callers   2 census       16  

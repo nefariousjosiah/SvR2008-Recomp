@@ -1,0 +1,45 @@
+# Codegen fixes for default.xex (included from svr2008_manifest.toml [entrypoint]).
+
+# D3D Swap (sub_8223A4B8) just loaded the present interval (device+13572) into r10; logged.
+[[midasm_hook]]
+name = "SvrPresentIntervalHook"
+address = 0x8223A56C
+registers = ["r10"]
+after_instruction = true
+
+# Frame-rate mode (src/fps_hooks.cpp): with --svr_60fps the game stays in its 60 fps mode.
+# SetFrameRate(fps): r3 = requested rate; 30/25 become 60/50.
+[[midasm_hook]]
+name = "SvrSetFrameRateHook"
+address = 0x824707A8
+registers = ["r3"]
+
+# "Drop to 30 fps mode": skipped (returns immediately) when the hook returns true.
+[[midasm_hook]]
+name = "SvrSkip30ModeHook"
+address = 0x82470A18
+registers = []
+return_on_true = true
+
+# The game's swap function (sub_8223A960) about to call VdSwap: once per presented frame.
+# src/fps_hooks.cpp counts frames for the on-screen FPS counter (F2).
+[[midasm_hook]]
+name = "SvrFrameSwapHook"
+address = 0x8223ABAC
+registers = []
+
+# Branch targets the analyzer leaves outside any function.
+[functions]
+0x8289C9A0 = { size = 4 }   # lone thunk: b 0x826DEC38
+# Case bodies of the switch at 0x8270F280, reached through `b` trampolines at 0x8270F2D0..E8.
+0x8270CB60 = {}
+0x8270CC98 = {}
+0x8270CDD8 = {}
+0x8270CF10 = {}
+0x8270D058 = {}
+0x824A43A0 = {}
+0x824A4988 = {}
+0x827EDAAC = {}
+0x827FBA9C = {}
+0x828160C8 = {}
+0x828172F0 = {}
