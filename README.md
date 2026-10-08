@@ -57,6 +57,9 @@ directly on your PC, and its graphics go through a native Vulkan renderer, at 60
    remembers it. (Or copy the `.iso` into the folder: the launcher finds it by itself.)
 5. Press **Play**.
 
+**Or start the game directly:** with your `.iso` in the game's folder, run **`svr2008.exe`**. It finds
+the disc image there by itself and starts the game, no launcher needed.
+
 Good to know:
 
 - **Settings** (button in the launcher): resolution (Auto, 720p, 1440p, 4K), fullscreen or window,
@@ -66,7 +69,7 @@ Good to know:
 - **Quitting:** close the game window (Alt+F4 or the close button); the launcher comes back.
 - **Saves** live in the `userdata` folder. Back it up to keep your career and created superstars.
 - **Box art:** the launcher shows the game's cover; drop another image onto it to change it.
-- Starting `svr2008.exe` directly works too: it uses the disc image the launcher remembered.
+- `svr2008.exe` also uses the disc image the launcher remembered, wherever it is.
 
 ### Controls
 
