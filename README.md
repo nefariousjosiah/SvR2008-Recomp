@@ -1,8 +1,8 @@
-# WWE SmackDown vs. Raw 2008 — native PC & Steam Deck
+# WWE SmackDown vs. Raw 2008 — native PC, Linux & Steam Deck
 
-The Xbox 360 version of **WWE SmackDown vs. Raw 2008**, running natively on Windows and on the
-Steam Deck: no emulator. The game's own program is recompiled to run directly on your PC, and its
-graphics go through a native Vulkan renderer, at 60 fps and up to 4K.
+The Xbox 360 version of **WWE SmackDown vs. Raw 2008**, running natively on Windows, and on Linux
+and the Steam Deck through Proton: no emulator. The game's own program is recompiled to run
+directly on your PC, and its graphics go through a native Vulkan renderer, at 60 fps and up to 4K.
 
 > **You need your own copy of the game.** None of the files from the game disc are in this project
 > or its downloads, and nothing is ever downloaded for you: the game runs from a disc image
@@ -26,10 +26,11 @@ graphics go through a native Vulkan renderer, at 60 fps and up to 4K.
   4K monitors, 720p on the Steam Deck. Or pick 720p / 1440p / 4K yourself. 16x anisotropic
   filtering.
 - **A simple launcher:** choose your disc image once (it checks it's the right game and release),
-  change settings, press Play. Works with a controller too. (On the Steam Deck, start the game
-  directly for now: see below.)
-- **Steam Deck** through Proton: put your disc image in the game's folder and run the game; 720p at
-  60 fps, the correct 16:9 shape (or stretched to fill).
+  change settings, press Play. Works with a controller too. (On Linux and the Steam Deck, start
+  the game directly for now: see below.)
+- **Linux and Steam Deck** through Proton, Steam's compatibility layer: put your disc image in the
+  game's folder and run the game. On the Deck: 720p at 60 fps, the correct 16:9 shape (or
+  stretched to fill).
 - **Plays straight from your disc image**: nothing is extracted or installed.
 - **Controllers** (Xbox, PlayStation, Switch Pro, the Deck's controls) through SDL. Keyboard controls
   are included but not tested yet, so a controller is recommended.
@@ -40,7 +41,8 @@ graphics go through a native Vulkan renderer, at 60 fps and up to 4K.
   `5451080B`, media ID `5E35F037`, about 7.8 GB). The launcher tells you if yours is a different
   release; those aren't supported yet.
 - **Windows 10 or 11, 64-bit**, and a graphics card with **Vulkan** support (AMD, NVIDIA or Intel,
-  with a recent driver). Or a **Steam Deck**.
+  with a recent driver). Or **Linux** with Steam (Proton) and Vulkan drivers, such as a
+  **Steam Deck**.
 - About 130 MB for the program, plus your disc image.
 
 ## Windows: install and play
@@ -82,11 +84,16 @@ tested yet. Their default layout (rebind with **F4** in game):
 
 **F2** shows or hides the FPS counter.
 
-## Steam Deck: install and play
+## Linux and Steam Deck (Proton): install and play
 
-The Windows release runs on the Deck through Proton, Steam's compatibility layer. It holds 60 fps.
-On the Deck, start the game itself (`svr2008.exe`) rather than the launcher, which still has bugs
-there: with your disc image in the same folder, the game finds it by itself.
+On Linux the Windows release runs through Proton, Steam's compatibility layer; there's no separate
+Linux build. The Steam Deck is the tested setup and holds 60 fps; other Linux PCs with Steam and
+up-to-date Vulkan drivers should work the same way. Start the game itself (`svr2008.exe`) rather than the
+launcher, which still has bugs under Proton: with your disc image in the same folder, the game
+finds it by itself.
+
+The steps below are for the Steam Deck. On another Linux PC, do the same in Steam's desktop
+client and skip the Desktop Mode and Game Mode parts.
 
 **In Desktop Mode** (press the Steam button, *Power*, *Switch to Desktop*):
 
