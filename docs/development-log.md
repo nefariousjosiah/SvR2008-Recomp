@@ -200,7 +200,7 @@ SetFrameRate `sub_824707A8`, "drop to 30" `sub_82470A18` (2 call sites) and "bac
 The original code of this project is licensed under the [MIT License](LICENSE), copyright (c) 2026
 nefariousjosiah. That covers:
 
-- `tools/` (pipeline, build, launch and diagnostic scripts) and the `.bat` launchers
+- `tools/` (pipeline, build, launch and diagnostic scripts) and the `.bat` files
 - `src/` (the app: window title, GPU backend selection, frame capture)
 - `config/` (codegen function lists and exclusions) and `svr2008_manifest.toml`
 - `ghidra_scripts/`
