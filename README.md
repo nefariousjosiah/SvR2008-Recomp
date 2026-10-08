@@ -12,7 +12,12 @@ directly on your PC, and its graphics go through a native Vulkan renderer, at 60
 
 ## Showcase
 
-*Gameplay clips are on the way.*
+<p align="center">
+  <img src="docs/showcase/slam.gif" width="480" alt="Triple H lifts Randy Orton and drops him">
+  <img src="docs/showcase/pedigree.gif" width="480" alt="Triple H hits the Pedigree on Randy Orton">
+  <img src="docs/showcase/top-rope.gif" width="480" alt="Triple H comes off the top rope onto Randy Orton">
+  <img src="docs/showcase/pin.gif" width="480" alt="Triple H pins Randy Orton for the three count">
+</p>
 
 ## Features
 
