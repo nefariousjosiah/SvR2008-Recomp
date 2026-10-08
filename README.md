@@ -31,8 +31,8 @@ graphics go through a native Vulkan renderer, at 60 fps and up to 4K.
 - **Steam Deck** through Proton: put your disc image in the game's folder and run the game; 720p at
   60 fps, the correct 16:9 shape (or stretched to fill).
 - **Plays straight from your disc image**: nothing is extracted or installed.
-- **Controllers** (Xbox, PlayStation, Switch Pro, the Deck's controls) through SDL; the keyboard
-  works as a controller too.
+- **Controllers** (Xbox, PlayStation, Switch Pro, the Deck's controls) through SDL. Keyboard controls
+  are included but not tested yet, so a controller is recommended.
 
 ## What you need
 
@@ -68,8 +68,8 @@ Good to know:
 
 ### Controls
 
-A controller is recommended; plug it in before starting. On the keyboard (rebind with **F4** in
-game):
+**A controller is recommended**; plug it in before starting. Keyboard controls are currently not
+tested yet. Their default layout (rebind with **F4** in game):
 
 | Controller | Keyboard | | Controller | Keyboard |
 |---|---|---|---|---|
