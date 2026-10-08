@@ -47,10 +47,10 @@ directly on your PC, and its graphics go through a native Vulkan renderer, at 60
 
 ## Windows: install and play
 
-1. Download `WWE-SVR2008-RECOMP-v<version>-Windows-and-SteamDeck.zip` from the
+1. Download `SVR2008-NATIVE.zip` from the
    [Releases](https://github.com/nefariousjosiah/WWE-SVR2008-RECOMP/releases) page (under
    *Assets*; not *Source code*, which is the developer source).
-2. Extract it to a folder of its own, for example `C:\Games\WWE-SVR2008-RECOMP`
+2. Extract it to a folder of its own, for example `C:\Games\SVR2008-NATIVE`
    (not inside `Program Files`).
 3. Run **`Launcher.exe`** in that folder.
 4. Press **Choose disc image...** and pick your `.iso`, wherever it is. The launcher checks it and
@@ -97,12 +97,12 @@ client and skip the Desktop Mode and Game Mode parts.
 
 **In Desktop Mode** (press the Steam button, *Power*, *Switch to Desktop*):
 
-1. **Get the release.** Download `WWE-SVR2008-RECOMP-v<version>-Windows-and-SteamDeck.zip`
+1. **Get the release.** Download `SVR2008-NATIVE.zip`
    (under *Assets*, not *Source code*) with a browser, or copy it from your PC together with your
    disc image. A USB stick for the copy must be **exFAT or NTFS**: the disc image is bigger than
    FAT32's 4 GB file limit.
 2. **Extract it.** In the *Dolphin* file manager, make a folder such as
-   `/home/deck/Games/WWE-SVR2008-RECOMP`, right-click the zip, *Extract*, *Extract archive to...*,
+   `/home/deck/Games/SVR2008-NATIVE`, right-click the zip, *Extract*, *Extract archive to...*,
    and choose that folder. (A microSD card works too.)
 3. **Add your disc image.** Copy your `.iso` into that folder, next to `svr2008.exe`.
 4. **Add it to Steam.** Open Steam (desktop), then *Games* > *Add a Non-Steam Game to My
