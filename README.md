@@ -4,6 +4,11 @@ The Xbox 360 version of **WWE SmackDown vs. Raw 2008**, running natively on Wind
 and the Steam Deck through Proton: no emulator. The game's own program is recompiled to run
 directly on your PC, and its graphics go through a native Vulkan renderer, at 60 fps and up to 4K.
 
+**The goal is simple: bring the game back so people can play it again, natively on PC at 60 fps.**
+It's the same game you remember, with no mods, roster changes or reworked gameplay. The only changes
+are the ones it needs to run well on today's hardware: a native renderer, a steady 60 fps (using the
+game's own 60 fps mode, so everything plays at the right speed) and higher resolutions.
+
 > **You need your own copy of the game.** None of the files from the game disc are in this project
 > or its downloads, and nothing is ever downloaded for you: the game runs from a disc image
 > (`.iso`) made from your own SvR 2008 disc. It does not condone piracy: please buy the game.
