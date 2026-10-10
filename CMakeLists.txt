@@ -3,7 +3,8 @@
 # SDK boilerplate lives in generated/rexglue.cmake.
 
 cmake_minimum_required(VERSION 3.25)
-project(svr2008 LANGUAGES CXX)
+# The release version (shown in the in-game settings menu; package_release.ps1 uses it too).
+project(svr2008 VERSION 0.2 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -16,6 +17,7 @@ set(SVR2008_SOURCES
     src/fps_hooks.cpp
     src/game_locator.cpp
     src/input_script.cpp
+    src/updater.cpp
 )
 
 if(WIN32)
@@ -25,10 +27,18 @@ else()
 endif()
 
 rexglue_setup_target(svr2008 GPU_PLUGINS xenos)
+target_compile_definitions(svr2008 PRIVATE SVR_VERSION="${PROJECT_VERSION}")
 if(WIN32)
     # Game file picker (src/game_locator.cpp).
     target_link_libraries(svr2008 PRIVATE comdlg32)
+    # Update check and download (src/updater.cpp).
+    target_link_libraries(svr2008 PRIVATE winhttp)
 endif()
+# The updater reads GitHub's release info with nlohmann/json and unpacks the release zip with
+# stb_image's zlib decoder, both header-only and already in the SDK's third-party tree.
+target_include_directories(svr2008 PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/third_party/rexglue-sdk/thirdparty/inja/third_party/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/third_party/rexglue-sdk/thirdparty/stb)
 
 # Developer call census of the D3D library functions, for native
 # renderer reverse engineering. Off by default; never ship a build with it on.

@@ -42,6 +42,9 @@ game's own 60 fps mode, so everything plays at the right speed) and higher resol
 - **In-game settings menu:** F1, or Back + Start on a controller: resolution, fullscreen or
   window, 60 or 30 fps, screen shape, FPS counter, sound and keyboard controls. Saved for next
   time.
+- **Updates in the game, when you want them:** a new version is announced at startup and installed
+  from the settings menu only if you choose to. Your saves are kept and backed up first (see
+  [Updating](#updating)).
 - **Linux and Steam Deck** through Proton, Steam's compatibility layer: put your disc image in the
   game's folder and run the game. On the Deck: 720p at 60 fps, the correct 16:9 shape (or
   stretched to fill).
@@ -78,6 +81,8 @@ Good to know:
   *Run anyway*.
 - **Quitting:** close the game window (Alt+F4 or the close button).
 - **Saves** live in the `userdata` folder. Back it up to keep your career and created superstars.
+- **Updates:** from v0.2 on, the game can update itself when you choose to: see
+  [Updating](#updating).
 - **Disc image somewhere else?** If there's no `.iso` in the folder, the game asks for one the
   first time and remembers it.
 
@@ -96,6 +101,25 @@ tested yet. Their default layout (rebind with **F4** in game):
 | Back | Tab / Z | | Stick presses | F / K |
 
 **F1** (or **Back + Start**) opens the settings menu; **F2** shows or hides the FPS counter.
+
+## Updating
+
+The game can update itself, but only when you choose to:
+
+- **At startup** it asks GitHub, in the background, whether a newer version of this port is out.
+  If there is one, a notice shows for a few seconds. Nothing is downloaded yet.
+- **To update,** open the settings menu (**F1**, or **Back + Start** on a controller), go down to
+  **Update** and press **A** (or Enter), then once more to confirm. It backs up your saves,
+  downloads the new version, checks it and installs it. Then choose **Restart now**.
+- **Your saves are kept.** The `userdata` folder (saves, profiles, created superstars) is never
+  changed, and before every update your saves are also copied to `save_backups\<version>_<date>`
+  in the game's folder. Your settings (`svr2008.toml`) and your disc image are kept too. If
+  something goes wrong partway, the update stops and the version you had is put back.
+- **Rather not?** Set **Check for updates** to *Off* in the settings menu and the game never
+  goes online. The check only asks GitHub for this project's latest release; nothing about you or
+  your PC is sent.
+- **Coming from v0.1:** download the new zip once by hand (see
+  [Windows: install and play](#windows-install-and-play)); from v0.2 on, the game does it.
 
 ## Linux and Steam Deck (Proton): install and play
 
@@ -186,7 +210,7 @@ and a match or two with shader dumping on, run `tools\native\build_shader_cache.
 `setup.ps1` again.
 
 Afterwards: `tools\windows\build.ps1` rebuilds, `tools\windows\run.ps1` runs it, and
-`tools\windows\package_release.ps1 -Version 1.0` makes the release zip (the game, no game
+`tools\windows\package_release.ps1` makes the release zip (version from `CMakeLists.txt`) (the game, no game
 files).
 
 Repository layout: `src/` the game-specific code (`native/` renderer glue, `reblue/` the renderer),

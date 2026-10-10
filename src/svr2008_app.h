@@ -29,6 +29,11 @@
 
 REXCVAR_DECLARE(std::string, gpu_backend);
 REXCVAR_DECLARE(bool, svr_fps_counter);
+REXCVAR_DECLARE(bool, svr_check_updates);
+
+#ifndef SVR_VERSION
+#define SVR_VERSION "dev"  // set by CMakeLists.txt (project VERSION)
+#endif
 
 inline constexpr const char* kWindowTitle = "WWE SmackDown vs. Raw 2008";
 
@@ -44,6 +49,9 @@ class Svr2008App : public rex::ReXApp {
 
   // Render through the Xenos GPU plugin unless --gpu_plugin says otherwise.
   void OnPreSetup(rex::RuntimeConfig& config) override {
+    // Files a finished update set aside (updater.h); after a restart from the updater, also waits
+    // for the previous version to exit.
+    svr::Updater::CleanUp(rex::filesystem::GetExecutableFolder());
     if (config.gpu_plugin.empty())
       config.gpu_plugin = "xenos";
 #if defined(SVR_NATIVE_RENDERER)
@@ -107,11 +115,24 @@ class Svr2008App : public rex::ReXApp {
         return !(imgui_drawer_ && imgui_drawer_->GetIO().WantCaptureMouse);
       });
     }
+    // Updates (settings menu > Update): a check at startup, installed only when the player says.
+    svr::Updater::Config update;
+    update.repo = "nefariousjosiah/WWE-SVR2008-RECOMP";
+    update.asset = "SVR2008-NATIVE.zip";
+    update.exe = "svr2008.exe";
+    update.settings_file = "svr2008.toml";
+    update.current_version = SVR_VERSION;
+    update.game_dir = rex::filesystem::GetExecutableFolder();
+    update.user_data = runtime()->user_data_root();
+    updater_ = std::make_unique<svr::Updater>(std::move(update));
+    if (REXCVAR_GET(svr_check_updates))
+      updater_->StartCheck();
   }
   void OnShutdown() override {
     rex::ui::UnregisterBind("bind_fps_counter");
     rex::ui::UnregisterBind("bind_svr_settings");
     settings_menu_.reset();
+    updater_.reset();  // stops a download in progress
     fps_counter_.reset();
     frame_dumper_.Stop();
   }
@@ -162,8 +183,10 @@ class Svr2008App : public rex::ReXApp {
       else if (!on)
         fps_counter_.reset();
     };
+    hooks.updater = [this] { return updater_.get(); };
+    hooks.quit = [this] { app_context().QuitFromUIThread(); };
     settings_menu_ = std::make_unique<SettingsMenuDialog>(
-        drawer, "WWE SmackDown vs. Raw 2008",
+        drawer, "WWE SmackDown vs. Raw 2008   v" SVR_VERSION,
         rex::filesystem::GetExecutableFolder() / "svr2008.toml", std::move(hooks));
     rex::ui::RegisterBind("bind_svr_settings", "F1", "Open the settings menu", [this] {
       if (settings_menu_)
@@ -212,4 +235,5 @@ class Svr2008App : public rex::ReXApp {
   rex::ui::ImGuiDrawer* imgui_drawer_ = nullptr;
   std::unique_ptr<FpsCounterDialog> fps_counter_;
   std::unique_ptr<SettingsMenuDialog> settings_menu_;
+  std::unique_ptr<svr::Updater> updater_;
 };

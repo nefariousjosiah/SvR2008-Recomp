@@ -1,10 +1,14 @@
 # Build the public release zip: this game's native build, WITHOUT any game files.
-#   powershell -ExecutionPolicy Bypass -File tools\windows\package_release.ps1 [-Version 1.0]
+#   powershell -ExecutionPolicy Bypass -File tools\windows\package_release.ps1
+# The version comes from CMakeLists.txt (project VERSION), the same one the game shows in its menu.
 # Output: dist\v<version>\SVR2008-NATIVE.zip (and the unpacked folder dist\SVR2008-NATIVE-v<version>).
 # Players put their own disc image next to svr2008.exe (or pick it on first start) and run it.
-param([string]$Version = "dev")
+param([string]$Version = "")
 $ErrorActionPreference = "Stop"
 $Root = (Resolve-Path "$PSScriptRoot\..\..").Path
+$ProjectVersion = [regex]::Match((Get-Content "$Root\CMakeLists.txt" -Raw), "project\(\S+ VERSION ([0-9.]+)").Groups[1].Value
+if (-not $Version) { $Version = $ProjectVersion }
+if ($Version -ne $ProjectVersion) { throw "-Version $Version differs from CMakeLists.txt ($ProjectVersion): the game would show the wrong version" }
 $Id = "svr2008"
 $Title = "WWE SmackDown vs. Raw 2008"
 $Name = "SVR2008-NATIVE"
@@ -66,6 +70,9 @@ Settings: press F1 in game (or Back + Start on a controller) for the settings me
 up to 4K, fullscreen or window, 60 or 30 fps, screen shape, FPS counter, sound, keyboard
 controls. Saved in $Id.toml.
 Saves: the userdata folder (created on first start). If something goes wrong, send game.log.
+Updates: when a new version is out, the game says so at startup; install it from the settings
+menu (Update), only if you want to. Your saves, settings and disc image are kept, and your saves
+are backed up to the save_backups folder first. Turn the check off there too.
 
 Licence: this program is free software under the GNU General Public License v3.0
 (licenses/this project (GPL-3.0).txt); the other licences are in the licenses folder.
@@ -100,6 +107,9 @@ $Notices = @{
   "third_party\rexglue-sdk\thirdparty\vulkan-headers\LICENSE.md" = "Vulkan headers.txt"
   "third_party\rexglue-sdk\thirdparty\spirv-headers\LICENSE" = "SPIR-V headers.txt"
   "third_party\licenses\renderdoc_app-LICENSE.txt" = "RenderDoc API header (MIT).txt"
+  # The updater (src/updater.cpp).
+  "third_party\rexglue-sdk\thirdparty\inja\third_party\include\nlohmann\LICENSE.MIT" = "nlohmann json (MIT).txt"
+  "third_party\licenses\stb-LICENSE.txt" = "stb (MIT or public domain).txt"
 }
 foreach ($k in $Notices.Keys) { Copy-Item "$Root\$k" "$Out\licenses\$($Notices[$k])" }
 
