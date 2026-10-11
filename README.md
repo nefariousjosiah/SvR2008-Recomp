@@ -39,7 +39,7 @@ game's own 60 fps mode, so everything plays at the right speed) and higher resol
 - **Up to 4K.** Internal resolution follows your screen: 1440p on 1080p and 1440p monitors, 4K on
   4K monitors, 720p on the Steam Deck. Or pick 720p / 1440p / 4K yourself. 16x anisotropic
   filtering.
-- **In-game settings menu:** F1, or Back + Start on a controller: resolution, fullscreen or
+- **In-game settings menu:** F1, or Back + Start on a controller (Share + Options on PlayStation): resolution, fullscreen or
   window, 60 or 30 fps, screen shape, FPS counter, sound and keyboard controls. Saved for next
   time.
 - **Updates in the game, when you want them:** a new version is announced at startup and installed
@@ -74,7 +74,7 @@ game's own 60 fps mode, so everything plays at the right speed) and higher resol
 
 Good to know:
 
-- **Settings:** press **F1** in game (or **Back + Start** on a controller) for the settings menu:
+- **Settings:** press **F1** in game (or **Back + Start** on a controller, **Share + Options** on PlayStation) for the settings menu:
   resolution (Auto, 720p, 1440p, 4K), fullscreen or window, 60 or 30 fps, screen shape, FPS
   counter, sound and keyboard controls. They are saved in `svr2008.toml`.
 - **"Windows protected your PC"**: the program isn't code-signed. Click *More info* and then
